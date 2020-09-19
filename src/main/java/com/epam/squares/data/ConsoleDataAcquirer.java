@@ -8,10 +8,10 @@ import java.io.InputStreamReader;
 
 public class ConsoleDataAcquirer implements DataAcquirer {
 
-    final static String INCORRECT_DATA_RANGE_MESSAGE = "Incorrect value of area(area should be more than 0). Try again.";
-    final static String INCORRECT_DATA_TYPE_MESSAGE = "Incorrect type data of area(area should be a number). Try again.";
-    final static String INPUT_ERROR_MESSAGE = "Something wrong with your input. Try again.";
-    final static String CLOSE_ERROR_MESSAGE = "Error with closing reader. Try again.";
+    private final static String INCORRECT_DATA_RANGE_MESSAGE = "Incorrect value of area(area should be more than 0). Try again.";
+    private final static String INCORRECT_DATA_TYPE_MESSAGE = "Incorrect type data of area(area should be a number). Try again.";
+    private final static String INPUT_ERROR_MESSAGE = "Something wrong with your input. Try again.";
+    private final static String CLOSE_ERROR_MESSAGE = "Error with closing reader. Try again.";
 
     @Override
     public double getArea() {
