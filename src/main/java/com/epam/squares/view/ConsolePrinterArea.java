@@ -1,6 +1,6 @@
-package com.epam.squares.view.factory;
+package com.epam.squares.view;
 
-public class ConsolePrinterAreaFactory implements ResultPrinterFactory {
+public class ConsolePrinterArea implements ResultPrinter {
 
     private final static String RESULT_TEXT = "The area of a square inscribed in circle: ";
 

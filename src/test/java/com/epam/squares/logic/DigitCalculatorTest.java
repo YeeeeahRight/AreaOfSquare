@@ -1,6 +1,6 @@
 package com.epam.squares.logic;
 
-import com.epam.squares.exceptions.TestException;
+import com.epam.squares.exceptions.CalculatorException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class DigitCalculatorTest {
     private DigitCalculator calculator = new DigitCalculator();
 
     @Test
-    public void testFindInscribedSquareAreaShouldCalculateWhenValueIsSquaredNumber() {
+    public void testFindInscribedSquareAreaShouldCalculateWhenValueIsSquaredNumber() throws CalculatorException {
         //when
         double actual = calculator.findInscribedSquareArea(16);
         //then
@@ -20,28 +20,28 @@ public class DigitCalculatorTest {
     }
 
     @Test
-    public void testFindInscribedSquareAreaShouldCalculateWhenValueIsNotSquaredNumber() {
+    public void testFindInscribedSquareAreaShouldCalculateWhenValueIsNotSquaredNumber() throws CalculatorException {
         //when
         double actual = calculator.findInscribedSquareArea(17);
         //then
         Assert.assertEquals(8.5, actual, DELTA);
     }
 
-    @Test(expected = TestException.class)
-    public void testFindInscribedSquareAreaShouldThrowExceptionWhenSquareIsNegative() {
+    @Test(expected = CalculatorException.class)
+    public void testFindInscribedSquareAreaShouldThrowExceptionWhenSquareIsNegative() throws CalculatorException {
         double result = calculator.findInscribedSquareArea(-5);
     }
 
     @Test
-    public void testFindDifferenceShouldCalculateWhenValuesAreFloatingPoint() {
+    public void testFindDifferenceShouldCalculateWhenValuesAreFloatingPoint() throws CalculatorException {
         //when
         double actual = calculator.findDifference(12.8, 6.4);
         //then
         Assert.assertEquals(2, actual, DELTA);
     }
 
-    @Test(expected = TestException.class)
-    public void testFindDifferenceShouldThrowExceptionWhenSecondSquareIsZero() {
+    @Test(expected = CalculatorException.class)
+    public void testFindDifferenceShouldThrowExceptionWhenSecondSquareIsZero() throws CalculatorException {
         double result = calculator.findDifference(5, 0);
     }
 
