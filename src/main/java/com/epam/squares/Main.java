@@ -2,6 +2,7 @@ package com.epam.squares;
 
 import com.epam.squares.data.ConsoleDataAcquirer;
 import com.epam.squares.data.DataAcquirer;
+import com.epam.squares.enums.PurposeEnum;
 import com.epam.squares.exceptions.UnknownFactoryPurpose;
 import com.epam.squares.logic.DigitCalculator;
 import com.epam.squares.view.factory.ConsolePrinterAreaFactory;
@@ -17,18 +18,17 @@ public class Main {
         DigitCalculator calculator = new DigitCalculator();
         double inscribedSquareArea = calculator.findInscribedSquareArea(circumscribedSquareArea);
         double difference = calculator.findDifference(circumscribedSquareArea, inscribedSquareArea);
-        ResultPrinterFactory printerFactory = createConsolePrinterByPurpose("area");
+        ResultPrinterFactory printerFactory = createConsolePrinterByPurpose(PurposeEnum.AREA);
         printerFactory.print(inscribedSquareArea);
-        printerFactory = createConsolePrinterByPurpose("difference");
+        printerFactory = createConsolePrinterByPurpose(PurposeEnum.DIFFERENCE);
         printerFactory.print(difference);
     }
 
-    private static ResultPrinterFactory createConsolePrinterByPurpose(String purpose) {
-        String purposeIgnoreCase = purpose.toLowerCase();
-        switch (purposeIgnoreCase) {
-            case "area":
+    private static ResultPrinterFactory createConsolePrinterByPurpose(PurposeEnum purpose) {
+        switch (purpose) {
+            case AREA:
                 return new ConsolePrinterAreaFactory();
-            case "difference":
+            case DIFFERENCE:
                 return new ConsolePrinterDifferenceFactory();
             default:
                 throw new UnknownFactoryPurpose(purpose + " is unknown purpose.");
