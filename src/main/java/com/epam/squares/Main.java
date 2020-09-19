@@ -24,12 +24,14 @@ public class Main {
     }
 
     private static ResultPrinterFactory createConsolePrinterByPurpose(String purpose) {
-        if (purpose.equalsIgnoreCase("area")) {
-            return new ConsolePrinterAreaFactory();
-        } else if (purpose.equalsIgnoreCase("difference")) {
-            return new ConsolePrinterDifferenceFactory();
-        } else {
-            throw new UnknownFactoryPurpose(purpose + " is unknown purpose.");
+        String purposeIgnoreCase = purpose.toLowerCase();
+        switch (purposeIgnoreCase) {
+            case "area":
+                return new ConsolePrinterAreaFactory();
+            case "difference":
+                return new ConsolePrinterDifferenceFactory();
+            default:
+                throw new UnknownFactoryPurpose(purpose + " is unknown purpose.");
         }
     }
 }
