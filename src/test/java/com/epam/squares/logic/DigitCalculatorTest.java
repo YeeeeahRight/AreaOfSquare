@@ -1,13 +1,12 @@
 package com.epam.squares.logic;
 
 import com.epam.squares.exceptions.TestException;
-import com.epam.squares.logic.DigitCalculator;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class DigitCalculatorTest {
 
-    private final static double delta = 0.00000001;
+    private final static double DELTA = 0.00000001;
 
     //given
     private DigitCalculator calculator = new DigitCalculator();
@@ -17,7 +16,7 @@ public class DigitCalculatorTest {
         //when
         double actual = calculator.findInscribedSquare(16);
         //then
-        Assert.assertEquals(8, actual, delta);
+        Assert.assertEquals(8, actual, DELTA);
     }
 
     @Test
@@ -25,7 +24,7 @@ public class DigitCalculatorTest {
         //when
         double actual = calculator.findInscribedSquare(17);
         //then
-        Assert.assertEquals(8.5, actual, delta);
+        Assert.assertEquals(8.5, actual, DELTA);
     }
 
     @Test(expected = TestException.class)
@@ -38,7 +37,7 @@ public class DigitCalculatorTest {
         //when
         double actual = calculator.findDifference(12.8, 6.4);
         //then
-        Assert.assertEquals(2, actual, delta);
+        Assert.assertEquals(2, actual, DELTA);
     }
 
     @Test(expected = TestException.class)
