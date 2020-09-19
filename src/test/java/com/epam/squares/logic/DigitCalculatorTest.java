@@ -12,24 +12,24 @@ public class DigitCalculatorTest {
     private DigitCalculator calculator = new DigitCalculator();
 
     @Test
-    public void testFindInscribedSquareShouldCalculateWhenValueIsSquaredNumber() {
+    public void testFindInscribedSquareAreaShouldCalculateWhenValueIsSquaredNumber() {
         //when
-        double actual = calculator.findInscribedSquare(16);
+        double actual = calculator.findInscribedSquareArea(16);
         //then
         Assert.assertEquals(8, actual, DELTA);
     }
 
     @Test
-    public void testFindInscribedSquareShouldCalculateWhenValueIsNotSquaredNumber() {
+    public void testFindInscribedSquareAreaShouldCalculateWhenValueIsNotSquaredNumber() {
         //when
-        double actual = calculator.findInscribedSquare(17);
+        double actual = calculator.findInscribedSquareArea(17);
         //then
         Assert.assertEquals(8.5, actual, DELTA);
     }
 
     @Test(expected = TestException.class)
-    public void testFindInscribedSquareShouldThrowExceptionWhenSquareIsNegative() {
-        double result = calculator.findInscribedSquare(-5);
+    public void testFindInscribedSquareAreaShouldThrowExceptionWhenSquareIsNegative() {
+        double result = calculator.findInscribedSquareArea(-5);
     }
 
     @Test

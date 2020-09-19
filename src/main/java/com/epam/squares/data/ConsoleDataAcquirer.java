@@ -14,7 +14,7 @@ public class ConsoleDataAcquirer implements DataAcquirer {
     final static String CLOSE_ERROR_MESSAGE = "Error with closing reader. Try again.";
 
     @Override
-    public double getSquare() {
+    public double getArea() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         double square = 0;
         boolean isCorrectInput;

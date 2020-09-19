@@ -13,12 +13,12 @@ public class Main {
 
     public static void main(String[] args) {
         DataAcquirer acquirer = new ConsoleDataAcquirer();
-        double circumscribedSquare = acquirer.getSquare();
+        double circumscribedSquareArea = acquirer.getArea();
         DigitCalculator calculator = new DigitCalculator();
-        double inscribedSquare = calculator.findInscribedSquare(circumscribedSquare);
-        double difference = calculator.findDifference(circumscribedSquare, inscribedSquare);
+        double inscribedSquareArea = calculator.findInscribedSquareArea(circumscribedSquareArea);
+        double difference = calculator.findDifference(circumscribedSquareArea, inscribedSquareArea);
         ResultPrinterFactory printerFactory = createConsolePrinterByPurpose("area");
-        printerFactory.print(inscribedSquare);
+        printerFactory.print(inscribedSquareArea);
         printerFactory = createConsolePrinterByPurpose("difference");
         printerFactory.print(difference);
     }

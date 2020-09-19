@@ -4,7 +4,7 @@ import com.epam.squares.exceptions.TestException;
 
 public class DigitCalculator {
 
-    public double findInscribedSquare(double circumscribedSquare) {
+    public double findInscribedSquareArea(double circumscribedSquare) {
         if (circumscribedSquare < 0) {
             throw new TestException("Circumscribed square can't be negative number.");
         }
