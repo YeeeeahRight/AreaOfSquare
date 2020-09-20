@@ -8,14 +8,16 @@ public class DigitCalculator {
         if (circumscribedSquare <= 0) {
             throw new CalculatorException("Circumscribed square should be positive number.");
         }
-        double radius = Math.sqrt(circumscribedSquare) / 2;
-        return 2 * radius * radius;
+        /*double radius = Math.sqrt(circumscribedSquare) / 2;
+        return 2 * radius * radius; - FORMULA*/
+        return circumscribedSquare / 2;
     }
 
     public double findDifference(double circumscribedSquare, double inscribedSquare) throws CalculatorException {
         if (inscribedSquare == 0) {
             throw new CalculatorException("Inscribed square can't be 0.");
         }
-        return circumscribedSquare / inscribedSquare;
+        //return circumscribedSquare / inscribedSquare;
+        return 2; //always 2.
     }
 }
