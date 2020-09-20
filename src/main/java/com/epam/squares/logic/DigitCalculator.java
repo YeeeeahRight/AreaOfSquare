@@ -5,8 +5,8 @@ import com.epam.squares.exceptions.CalculatorException;
 public class DigitCalculator {
 
     public double findInscribedSquareArea(double circumscribedSquare) throws CalculatorException {
-        if (circumscribedSquare < 0) {
-            throw new CalculatorException("Circumscribed square can't be negative number.");
+        if (circumscribedSquare <= 0) {
+            throw new CalculatorException("Circumscribed square should be positive number.");
         }
         double radius = Math.sqrt(circumscribedSquare) / 2;
         return 2 * radius * radius;

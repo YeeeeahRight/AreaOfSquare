@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class DigitCalculatorTest {
 
-    private final static double DELTA = 0.00000001;
+    private final static double DELTA = 0.0001;
 
     //given
     private DigitCalculator calculator = new DigitCalculator();
@@ -29,7 +29,7 @@ public class DigitCalculatorTest {
 
     @Test(expected = CalculatorException.class)
     public void testFindInscribedSquareAreaShouldThrowExceptionWhenSquareIsNegative() throws CalculatorException {
-        double result = calculator.findInscribedSquareArea(-5);
+        calculator.findInscribedSquareArea(-5);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class DigitCalculatorTest {
 
     @Test(expected = CalculatorException.class)
     public void testFindDifferenceShouldThrowExceptionWhenSecondSquareIsZero() throws CalculatorException {
-        double result = calculator.findDifference(5, 0);
+        calculator.findDifference(5, 0);
     }
 
 }
