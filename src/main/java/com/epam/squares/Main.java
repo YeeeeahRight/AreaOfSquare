@@ -3,7 +3,6 @@ package com.epam.squares;
 import com.epam.squares.data.ConsoleDataAcquirer;
 import com.epam.squares.data.DataAcquirer;
 import com.epam.squares.enums.PurposeEnum;
-import com.epam.squares.exceptions.CalculatorException;
 import com.epam.squares.exceptions.DataTypeException;
 import com.epam.squares.exceptions.InputStreamConsoleException;
 import com.epam.squares.exceptions.UnknownFactoryPurposeException;
@@ -14,7 +13,7 @@ import com.epam.squares.view.ResultPrinterFactory;
 
 public class Main {
 
-    public static void main(String[] args) throws CalculatorException, UnknownFactoryPurposeException,
+    public static void main(String[] args) throws UnknownFactoryPurposeException,
             DataTypeException, InputStreamConsoleException {
         DataAcquirer acquirer = new ConsoleDataAcquirer();
         double circumscribedSquareArea = acquirer.getArea();
